@@ -3,8 +3,8 @@
 #include<iostream>
 #include<string.h>
 #include<locale.h>
-#include<windows.h> 
-#include<time.h>
+//#include<windows.h> 
+//#include<time.h>
 
 struct VENDAS
 {
@@ -36,6 +36,7 @@ int main()
 		if((arquivo = fopen("dados.dat","wb+"))==NULL)
 		{
 			printf("Erro na abertura do arquivo.\n");
+			printf("\n");
 			system("pause");
 		}			
 	}
@@ -93,6 +94,7 @@ void cadastrar_venda(FILE *arquivo)
 	fwrite(&venda,sizeof(VENDAS),1,arquivo);
   memset(venda.produto,0,20);
   i++;
+  printf("\n");
   system("pause");
 }
 
@@ -116,6 +118,7 @@ void consultar_venda(FILE *arquivo)
       else
         printf("Id não encontrado.");
   }
+  printf("\n");
   system("pause");
 }
 
@@ -131,6 +134,7 @@ void gerar_txt(FILE *arquivo)
   if(!arquivo_txt)
   {
   	printf("Não foi possível criar esse arquivo!\n");
+  	printf("\n");
   	system("pause");
   }
 	printf("\nO arquivo texto foi criado.");
@@ -151,7 +155,8 @@ void gerar_txt(FILE *arquivo)
     }
 	}
 	fclose(arquivo_txt);
-  system("pause");
+	printf("\n");
+  	system("pause");
 }
 
 
@@ -195,7 +200,8 @@ void cancelar_venda(FILE *arquivo)
 		printf("Essa Venda não existe. \n");
 	}	
 	}
-  system("pause");
+	printf("\n");
+  	system("pause");
 }
 
 
